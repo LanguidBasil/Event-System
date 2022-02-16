@@ -22,10 +22,16 @@ namespace Events
 
 	void Event::operator -= (std::function<void()> func)
 	{
-		//for (auto& f : Subscribed)
-		//{
-		//	if (f == func)
-		//		Subscribed.erase(f);
-		//}
+		for (auto it = Subscribed.begin(); it != Subscribed.end(); it++)
+		{
+			const auto& current = it->target<void()>();
+			const auto& target = func.target<void()>();
+
+			if (current == target)
+			{
+				Subscribed.erase(it);
+				return;
+			}
+		}
 	}
 }

@@ -36,11 +36,15 @@ int main()
 
 	e += PrintHelloWorld;
 	e += PrintBye;
-
-	e.Fire();
-
 	e += PrintImAFunc;
 	e += callableClass;
 
 	e.Fire();
+
+	e -= PrintHelloWorld;
+
+	std::cout << std::endl;
+	e.Fire();
+
+	std::cin.get();
 }
