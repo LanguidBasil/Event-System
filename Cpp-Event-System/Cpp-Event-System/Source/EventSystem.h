@@ -3,7 +3,7 @@
 #include <vector>
 #include <functional>
 
-namespace Events
+namespace EventSystem
 {
 	class Event
 	{

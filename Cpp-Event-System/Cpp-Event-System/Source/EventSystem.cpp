@@ -2,7 +2,7 @@
 
 #include <vector>
 
-namespace Events
+namespace EventSystem
 {
 	Event::Event()
 		: Subscribed(std::vector<std::function<void()>>()) {}

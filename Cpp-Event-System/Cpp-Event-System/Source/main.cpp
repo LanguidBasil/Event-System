@@ -31,7 +31,7 @@ int main()
 {
 	std::cout << "We're going to fire some events!" << std::endl;
 
-	Events::Event e;
+	EventSystem::Event e;
 	CallableClass callableClass;
 
 	e += PrintHelloWorld;
