@@ -13,6 +13,9 @@ namespace EventSystem
 		~Event();
 
 		void Fire();
+		void Add(std::function<void()>);
+		void Remove(std::function<void()>);
+		void RemoveAll();
 		void operator += (std::function<void()>);
 		void operator -= (std::function<void()>);
 

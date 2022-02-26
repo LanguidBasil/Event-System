@@ -15,12 +15,12 @@ namespace EventSystem
 			func();
 	}
 
-	void Event::operator += (std::function<void()> func)
+	void Event::Add(std::function<void()> func)
 	{
 		Subscribed.push_back(func);
 	}
 
-	void Event::operator -= (std::function<void()> func)
+	void Event::Remove(std::function<void()> func)
 	{
 		for (auto it = Subscribed.begin(); it != Subscribed.end(); it++)
 		{
@@ -33,5 +33,20 @@ namespace EventSystem
 				return;
 			}
 		}
+	}
+
+	void Event::RemoveAll()
+	{
+		Subscribed.clear();
+	}
+
+	void Event::operator += (std::function<void()> func)
+	{
+		Add(func);
+	}
+
+	void Event::operator -= (std::function<void()> func)
+	{
+		Remove(func);
 	}
 }
